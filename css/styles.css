@@ -64,7 +64,7 @@ header {
 }
 
 .is-hidden {
-  visibility: hidden;
+  overflow: hidden;
   pointer-events: none;
 }
 
