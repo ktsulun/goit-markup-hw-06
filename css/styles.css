@@ -57,10 +57,11 @@ p {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  z-index: 2;
   background-color: var(--primary-white-color);
   width: 100%;
-  position: fixed;
-  z-index: 2;
 }
 
 .hidden {
