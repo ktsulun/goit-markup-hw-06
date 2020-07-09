@@ -205,7 +205,7 @@ header {
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--primary-text-color);
-  width: 1600px;
+  max-width: 1600px;
   height: 600px;
   text-align: center;
   margin-left: auto;
