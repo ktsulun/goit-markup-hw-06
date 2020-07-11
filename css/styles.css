@@ -76,6 +76,8 @@ header {
 }
 
 .is-hidden {
+  /* visibility: hidden; */
+  opacity: 0;
   overflow: hidden;
   pointer-events: none;
 }
@@ -149,6 +151,7 @@ header {
 
 .contact-links {
   display: flex;
+  align-items: center;
   margin-left: auto;
 }
 
@@ -157,7 +160,8 @@ header {
 }
 
 .contact-link-item {
-  display: block;
+  display: flex;
+  align-items: center;
   font-family: Roboto;
   font-weight: 500;
   font-size: 14px;
@@ -504,6 +508,10 @@ header {
   color: var(--primary-white-color);
 }
 
+.footer-email {
+  padding: 15px 16px;
+}
+
 .adress {
   font-style: normal;
   font-size: 14px;
@@ -627,7 +635,6 @@ header {
 }
 
 .modal-backdrop.is-hidden .modal-window {
-  opacity: 0;
   transform: translate(-50%, -50%) scale(0, 0);
 }
 
@@ -640,6 +647,7 @@ header {
   background-color: var(--primary-white-color);
   padding: 40px;
   opacity: 1;
+  overflow: scroll;
   transform: translate(-50%, -50%) scale(1, 1);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms,
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
@@ -692,7 +700,6 @@ header {
   height: 40px;
   padding-left: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
-  box-sizing: border-box;
   border-radius: 4px;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -738,7 +745,7 @@ header {
 .input-group:focus .field-descriprion,
 .form-input:not(:placeholder-shown) ~ label > .field-descriprion {
   color: var(--focus-color);
-  top: -150%;
+  top: -105%;
   left: 0;
 }
 
@@ -808,7 +815,8 @@ header {
   color: var(--primary-text-color);
 }
 
-.checkbox-icon {
+.checkbox-label::before {
+  content: ' ';
   height: 15px;
   width: 16px;
   fill: none;
@@ -816,13 +824,16 @@ header {
   border-radius: 2px;
   border: 2px solid var(--title-nav-color);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 50ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.checkbox-input:checked ~ label > .checkbox-icon {
+.checkbox-input:checked ~ .checkbox-label::before {
   fill: var(--primary-white-color);
-  border: none;
+  background-image: url(../images/body/pictures/check.svg);
   background-color: var(--focus-color);
+  background-size: contain;
+  background-origin: border-box;
+  border-color: var(--focus-color);
 }
 
 .licence-agreement {
